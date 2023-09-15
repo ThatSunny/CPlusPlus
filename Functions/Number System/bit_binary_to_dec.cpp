@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+// Binary to Decimal 
+// Using Bitwise Operator
+
+int bintodec(int n){
+    int dec = 0, i=0, rem = 0;
+
+    while(n>0){
+        rem = (n & 1);
+        dec = rem * pow(2, i++) + dec;
+
+        // New number to perform operation on
+        n = n / 10;
+    }
+    return dec;
+}
+
+int main(){
+
+    // Declaring and taking user input
+    int n;
+    cout << "Enter the number: ";
+    cin >> n;
+
+    // Calling function and printing results
+    cout << "Decimal number is: " << bintodec(n);
+    return 0;
+}
